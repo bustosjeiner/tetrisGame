@@ -28,33 +28,33 @@ const SQUAREPIECE = [
 ];
 const LINEPIECE = [
   [0, 0, 0, 0],
-  [2, 2, 2, 2],
+  [1, 1, 1, 1],
   [0, 0, 0, 0],
   [0, 0, 0, 0],
 ];
 const JPIECE = [
-  [3, 0, 0],
-  [3, 3, 3],
+  [1, 0, 0],
+  [1, 1, 1],
   [0, 0, 0],
 ];
 const LPIECE = [
-  [0, 0, 4],
-  [4, 4, 4],
+  [0, 0, 1],
+  [1, 1, 1],
   [0, 0, 0],
 ];
 const TPIECE = [
-  [0, 5, 0],
-  [5, 5, 5],
+  [0, 1, 0],
+  [1, 1, 1],
   [0, 0, 0],
 ];
 const SPIECE = [
-  [0, 6, 6],
-  [6, 6, 0],
+  [0, 1, 1],
+  [1, 1, 0],
   [0, 0, 0],
 ];
 const ZPIECE = [
-  [7, 7, 0],
-  [0, 7, 7],
+  [1, 1, 0],
+  [0, 1, 1],
   [0, 0, 0],
 ];
 const PIECES = [SQUAREPIECE, LINEPIECE, JPIECE, LPIECE, TPIECE, SPIECE, ZPIECE];
@@ -64,8 +64,6 @@ const PIECES = [SQUAREPIECE, LINEPIECE, JPIECE, LPIECE, TPIECE, SPIECE, ZPIECE];
   RIGHT: ArrowRight,
   DOWN: ArrowDown,
 };*/
-const ALEATORYNUMBER = Math.floor(Math.random() * COLORSTYLE.length);
-const ALEATORYCOLOR = COLORSTYLE[ALEATORYNUMBER];
 //create matriz board
 const MATRIZBOARD = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -132,8 +130,9 @@ class Piece {
   }
 
   generateAleatoryPiece() {
+    this.auxiliar = this.aleatoryPieceNumber(PIECES)
     this.number = this.aleatoryColorNumber(COLORSTYLE);
-    this.piece = PIECES[this.aleatoryPieceNumber(PIECES)];
+    this.piece = PIECES[this.auxiliar];
     this.color = COLORSTYLE[this.number];
     this.stroke = STROKESTYLE[this.number];
   }
@@ -141,9 +140,9 @@ class Piece {
   drowPieces() {
     this.ctx.fillStyle = this.color;
     this.ctx.strokeStyle = this.stroke;
-    for (let y = 0; y < this.piece.length; y++) {
-      for (let x = 0; x < this.piece[y].length; x++) {
-        if ((this.piece[x] = !0)) {
+    for (let y = 0; y < this.piece.length; y ++) {
+      for (let x = 0; x < this.piece[y].length; x ++) {
+        if ((this.piece[x][y] == 1)) {
           this.ctx.fillRect(x * POINTPIECE, y * POINTPIECE, POINTPIECE, POINTPIECE);
           this.ctx.strokeRect(x * POINTPIECE, y * POINTPIECE, POINTPIECE, POINTPIECE)
         }
