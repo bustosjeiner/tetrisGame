@@ -8,7 +8,7 @@
 }
 .caja{ 
     width: 550px;
-    height: 600px;
+    height: 750px;
     background-color:  #131C21;
 }
 .titulo{
@@ -42,6 +42,10 @@ h1 {
     border-radius: 5px;
     font-size: 12px;
     color:  #FFE700;
+}
+canvas {
+    border: 2px solid #262D31;
+    margin-left: 100px;
 }
 .icon{
     display: flex;
