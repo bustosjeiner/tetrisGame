@@ -1,0 +1,53 @@
+@font-face {
+    font-family: barcade;
+    src: url(barcadenobar.ttf);
+}
+@font-face {
+    font-family: vitange;
+    src: url(Vintage\ Warehouse.ttf);
+}
+.caja{ 
+    width: 550px;
+    height: 750px;
+    background-color:  #131C21;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+h1 { 
+    width: 300px;
+    text-align: center;
+    font-family: barcade;
+    font-size: 60px;
+    border: 6px solid rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.contenido {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+.textouno {
+    width: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 12px;
+    color: #0080FF;
+}
+.textodos {
+    width: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 12px;
+    color:  #FFE700;
+}
+canvas {
+    border: 2px solid #262D31;
+    margin-left: 100px;
+}
+.icon{
+    display: flex;
+    justify-content: flex-start;
+}
